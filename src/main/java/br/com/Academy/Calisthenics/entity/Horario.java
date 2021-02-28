@@ -1,6 +1,6 @@
 package br.com.Academy.Calisthenics.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -13,6 +13,5 @@ import lombok.Data;
 public class Horario {
 
 	private Long id;
-	private LocalDate data;
-	private String hora;
+	private LocalDateTime dataHora;
 }

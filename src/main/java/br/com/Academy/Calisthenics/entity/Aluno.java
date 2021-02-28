@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.Academy.Calisthenics.Enum.TipoTreino;
@@ -41,10 +42,14 @@ public class Aluno {
 	@Column
 	private String whatssap;
 	
-	
 	@Column
+	@ManyToOne
 	private Turno turno;
 	
 	@Column
 	private TipoTreino tipoTreino;
+	
+	
+	@Column
+	private boolean situacao;
 }

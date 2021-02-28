@@ -17,5 +17,7 @@ public class Professor {
 	private String telefone;
 	private String whatssap;
 	private Horario horario;
+	private String endereco;
+	private Integer numeroCasa;
 	private Turno turno;
 }
