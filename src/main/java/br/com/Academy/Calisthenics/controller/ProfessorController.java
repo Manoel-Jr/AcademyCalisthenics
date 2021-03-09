@@ -24,23 +24,24 @@ public class ProfessorController {
 	
 	
 	@PostMapping
-	public ResponseEntity<Professor> salvar(Professor professor){
+	public ResponseEntity<Professor> salvar(Professor professor) throws Exception{
 		return new ResponseEntity<>(professorService.salvarProfessor(professor), HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Professor> buscarProfessorPorId(Long id){
+	public ResponseEntity<Professor> buscarProfessorPorId(Long id) throws Exception{
 		return new ResponseEntity<>(professorService.buscarProfessor(id), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus
-	public void deletaProfessor(Long id) {
+	public void deletaProfessor(Long id) throws Exception {
 		professorService.excluirProfessor(id);
 	}
 	
 	@PutMapping
-	public ResponseEntity<Professor> atualizar(Professor professor, Long id){
-		return new ResponseEntity<>(professorService.atualizarDadosProfessor(professor, id), HttpStatus.OK);
+	@ResponseStatus(code = HttpStatus.OK)
+	public void atualizar(Professor professor, Long id) throws Exception{
+		professorService.atualizarDadosProfessor(professor, id);
 	}
 }

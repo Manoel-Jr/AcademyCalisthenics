@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.Academy.Calisthenics.entity.Aluno;
@@ -29,8 +30,9 @@ public class AlunoController {
 		return new ResponseEntity<>(alunoService.buscarAluno(id), HttpStatus.OK);
 	}
 	
-	@PutMapping("/{id}/{aluno}")
-	public ResponseEntity<Aluno> atualizar(@PathVariable ("id") Long id, Aluno aluno ){
-		return new ResponseEntity<>(alunoService.atualizarDadosAluno(aluno, id), HttpStatus.OK);
+	@ResponseStatus(code = HttpStatus.OK)
+	@PutMapping("/{id}")
+	public void atualizar(@PathVariable ("id") Long id, Aluno aluno ){
+		alunoService.atualizarDadosAluno(aluno, id);
 	}
 }

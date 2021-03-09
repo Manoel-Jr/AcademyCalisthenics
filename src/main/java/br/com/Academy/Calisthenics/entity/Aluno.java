@@ -1,5 +1,7 @@
 package br.com.Academy.Calisthenics.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,4 +54,11 @@ public class Aluno {
 	
 	@Column
 	private boolean situacao;
+	
+	@Column
+	private LocalDate dataPagamento;
+	
+	
+	@Column
+	private LocalDate dataInicioAluno;
 }

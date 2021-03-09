@@ -1,5 +1,7 @@
 package br.com.Academy.Calisthenics.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -20,4 +22,5 @@ public class Professor {
 	private String endereco;
 	private Integer numeroCasa;
 	private Turno turno;
+	private LocalDate dataInicio;
 }
